@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Ahmed Mhedhbi",
+    "section": "",
+    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nThursday, the 9th of January, 2025\n\n\nAhmed Mhedhbi\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMonday, the 6th of January, 2025\n\n\nAhmed Mhedhbi\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "Welcome To My Blog",
+    "section": "",
+    "text": "This is the first post in a Quarto blog. Welcome!\n\nSince this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+  },
+  {
+    "objectID": "posts/post-with-code/index.html",
+    "href": "posts/post-with-code/index.html",
+    "title": "Post With Code",
+    "section": "",
+    "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Ahmed Mhedhbi",
+    "section": "",
+    "text": "On a quest for knowledge …\nI’m always searching, learning, and hoping to find answers.\n\n\nEducation\n\nB.Sc. in Computer Science (Honors), 2022 - Now  Université de Montréal, Canada\n\n\nWhen I’m not smashing the keyboard or writing math proofs, you’ll find me:\n\nSwimming to relax.\nExploring philosophy to nourish my thoughts.\nPracticing martial arts for discipline and focus."
+  },
+  {
+    "objectID": "projetHonor.html",
+    "href": "projetHonor.html",
+    "title": "Projet Honor",
+    "section": "",
+    "text": "Voici la description du projet."
+  },
+  {
+    "objectID": "projetHonor.html#janvier---26-janvier",
+    "href": "projetHonor.html#janvier---26-janvier",
+    "title": "Projet Honor",
+    "section": "13 Janvier - 26 Janvier",
+    "text": "13 Janvier - 26 Janvier\n\n\nTâches\n\n\nLire les papiers [BCK+14] et [M23] (“Reuse Space” par Mertz).\nDocumenter l’implimentation de TreeEval catalytique."
+  },
+  {
+    "objectID": "projetHonor.html#january---9-février",
+    "href": "projetHonor.html#january---9-février",
+    "title": "Projet Honor",
+    "section": "27 January - 9 Février",
+    "text": "27 January - 9 Février\n\n\nTâches\n\nN/A."
+  },
+  {
+    "objectID": "projetHonor.html#février---23-février",
+    "href": "projetHonor.html#février---23-février",
+    "title": "Projet Honor",
+    "section": "9 Février - 23 Février",
+    "text": "9 Février - 23 Février\n\n\nTâches\n\nN/A."
+  },
+  {
+    "objectID": "projetHonor.html#février---9-mars",
+    "href": "projetHonor.html#février---9-mars",
+    "title": "Projet Honor",
+    "section": "23 Février - 9 Mars",
+    "text": "23 Février - 9 Mars\n\n\nTâches\n\nN/A."
+  },
+  {
+    "objectID": "projetHonor.html#mars---23-mars",
+    "href": "projetHonor.html#mars---23-mars",
+    "title": "Projet Honor",
+    "section": "10 Mars - 23 Mars",
+    "text": "10 Mars - 23 Mars\n\n\nTâches\n\nN/A."
+  },
+  {
+    "objectID": "projetHonor.html#mars---6-avril",
+    "href": "projetHonor.html#mars---6-avril",
+    "title": "Projet Honor",
+    "section": "24 Mars - 6 Avril",
+    "text": "24 Mars - 6 Avril\n\n\nTâches\n\nN/A."
+  },
+  {
+    "objectID": "projetHonor.html#avril---20-avril",
+    "href": "projetHonor.html#avril---20-avril",
+    "title": "Projet Honor",
+    "section": "7 Avril - 20 Avril",
+    "text": "7 Avril - 20 Avril\n\n\nTâches\n\nN/A."
+  },
+  {
+    "objectID": "projetHonor.html#avril---4-mai",
+    "href": "projetHonor.html#avril---4-mai",
+    "title": "Projet Honor",
+    "section": "21 Avril - 4 Mai",
+    "text": "21 Avril - 4 Mai\n\n\nTâches\n\nN/A."
+  }
+]
