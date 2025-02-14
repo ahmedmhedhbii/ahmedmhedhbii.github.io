@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Ahmed Mhedhbi"
+  description: "Personal website of Ahmed Mhedhbi"
+  repo-url: https://github.com/ahmedmhedhbii/ahmedmhedhbii.github.io
+  repo-actions: [edit, source, issue]
+  navbar:
+    title: "AM"
+    style: "docked"
+    search: true
+    right:
+      - text: About
+        href: index.qmd
+      - text: Blog
+        href: blog.qmd
+      - text: Projects
+        href: projects.qmd
+      - text: Talks
+        href: talks.qmd
+      - text: Publications
+        href: publications.qmd
+      - text: "{{< iconify fa6-brands square-x-twitter >}}"
+        href: https://x.com/
+      - icon: github
+        href: https://github.com/ahmedmhedhbii
+      - icon: linkedin
+        href: https://www.linkedin.com/in/ahmed-mhedhbi/
+  page-footer:
+    border: true
+    left: |
+      Powered by [{{< iconify simple-icons:quarto >}} Quarto](https://quarto.org).
+    center: |
+      &copy; 2025 [Ahmed Mhedhbi](https://ahmedmhedhbii.github.io/).
+
+format:
+  html:
+    theme:
+      light: Lux
+      dark: cyborg
+    css: styles.css
+    lang: en
+    date-format: "dddd[, the] Do [of] MMMM, YYYY"
+
+lightbox: auto
+
+execute:
+  freeze: true

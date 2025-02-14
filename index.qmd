@@ -1,0 +1,22 @@
+---
+title: "Ahmed Mhedhbi"
+subtitle: |
+  Computational complexity theorist in the making, functional programmer, and philosophy enthusiast.
+image: assests/images/profile.jpg
+about:
+  template: solana
+  image-width: 9em
+  image-shape: round
+  links:
+  - text: "{{< iconify fa6-solid:envelope >}}"
+    href: "mailto:ahmed.a.mhedhbi@gmail.com"
+    aria-label: "personal email"
+  - text: "{{< iconify fa6-brands square-x-twitter >}}"
+    href: "https://x.com/"
+  - icon: github
+    href: https://github.com/ahmedmhedhbii
+  - icon: linkedin
+    href: https://www.linkedin.com/in/ahmed-mhedhbi/
+---
+
+### On a quest for knowledge ...

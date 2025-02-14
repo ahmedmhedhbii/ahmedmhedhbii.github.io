@@ -1,0 +1,86 @@
+---
+title : "Projet Honor"
+subtitle : "Limites du calcul catalytique, supervisé par Prof. Pierre McKenzie"
+author: "Ahmed Mhedhbi"
+navbar: false
+about:
+  template: solana
+  links:
+  - text: "{{< iconify fa6-solid:envelope >}}"
+    href: "mailto:ahmed.a.mhedhbi@gmail.com"
+    aria-label: "personal email"
+  - icon: github
+    href: https://github.com/ahmedmhedhbii
+  - icon: linkedin
+    href: https://www.linkedin.com/in/ahmed-mhedhbi/
+---
+Voici la [description du projet](assests/files/HonorA2025.pdf).
+
+# Les tâches du projet:
+- Survol des papiers mentionnés dans la description du projet.
+- Finaliser et documenter l'implémentation de TreeEval catalytique.
+- Essayer d'implémenter un algorithme catalytique pour le problème P-complet appelé GEN.
+- Essayer de répondre à la question fondamentale :
+  
+  _"Est-ce que le calcul catalytique est d’une quelconque aide pour faire mieux à l’aide de programmes de branchements sans restriction que nous ne savons le faire à l’aide de programmes de branchements incrémentaux pour GEN ? Si une amélioration ne semble pas possible, quels sont précisément les obstacles rencontrés ?"_
+
+
+## 13 Janvier - 26 Janvier
+<details>
+<summary><strong>Tâches</strong></summary>
+
+i. Lire les papiers [BCK+14] et [M23] ("Reuse Space" par Mertz).
+
+</details>
+
+## 27 January - 9 Février
+<details>
+<summary><strong>Tâches</strong></summary>
+
+i. Relire [BCK+14] et faire les exercices de [M23].
+ii. Lire [CM24]
+iii. Faire le circuit Pour GEN.
+
+</details>
+
+
+## 9 Février - 23 Février
+<details>
+<summary><strong>Tâches</strong></summary>
+
+i. Rédiger un document détaillé pour le circuit destiné à GEN, en démontrant aussi que le problème est P-complet (comme un exercice).  
+ii. Réaliser une rétro-ingénierie de TreeEval afin d'appliquer ses méthodes sur GEN.  
+iii. Lire Modern C par Jens Gustedt (3ème édition) pour refaire l'implémentation de TreeEval catalytique en C.
+
+</details>
+
+
+## 23 Février - 9 Mars
+<details>
+<summary><strong>Tâches</strong></summary>
+**N/A.**
+</details>
+
+## 10 Mars - 23 Mars
+<details>
+<summary><strong>Tâches</strong></summary>
+**N/A.**
+</details>
+
+## 24 Mars - 6 Avril
+<details>
+<summary><strong>Tâches</strong></summary>
+**N/A.**
+</details>
+
+## 7 Avril - 20 Avril
+<details>
+<summary><strong>Tâches</strong></summary>
+**N/A.**
+</details>
+
+## 21 Avril - 4 Mai
+<details>
+<summary><strong>Tâches</strong></summary>
+**N/A.**
+</details>
