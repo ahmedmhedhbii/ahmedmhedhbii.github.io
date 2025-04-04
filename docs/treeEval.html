@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ahmed Mhedhbi">
 
-<title>Projet Honor – Ahmed Mhedhbi</title>
+<title>Tree Evaluation is in Space O(log n log log n) implementation – Ahmed Mhedhbi</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -34,6 +68,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -112,151 +147,81 @@ window.Quarto = {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-solana column-body">
-  <div class="about-entity">
-    <div class="entity-contents">
-      <header id="title-block-header" class="quarto-title-block default">
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Projet Honor</h1>
-<p class="subtitle lead">Limites du calcul catalytique, supervisé par Prof.&nbsp;Pierre McKenzie</p>
+<div class="quarto-title-block"><div><h1 class="title">Tree Evaluation is in Space O(log n log log n) implementation</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
              <p>Ahmed Mhedhbi </p>
           </div>
   </div>
-  </div>
-</header> <div class="about-links">
-  <a href="mailto:ahmed.a.mhedhbi@gmail.com" class="about-link" rel="" target="">
-     <span class="about-link-text"><iconify-icon role="img" inline="" icon="fa6-solid:envelope" aria-label="Icon envelope from fa6-solid Iconify.design set." title="Icon envelope from fa6-solid Iconify.design set."></iconify-icon></span>
-  </a>
-  <a href="https://github.com/ahmedmhedhbii" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text"></span>
-  </a>
-  <a href="https://www.linkedin.com/in/ahmed-mhedhbi/" class="about-link" rel="" target="">
-    <i class="bi bi-linkedin"></i>
-     <span class="about-link-text"></span>
-  </a>
-</div>
-      <div class="about-contents"><main class="content" id="quarto-document-content">
-<p>Voici la <a href="assests/files/HonorA2025.pdf">description du projet</a>.</p>
-<section id="les-tâches-du-projet" class="level1">
-<h1>Les tâches du projet:</h1>
-<ul>
-<li><p>Survol des papiers mentionnés dans la description du projet.</p></li>
-<li><p>Finaliser et documenter l’implémentation de TreeEval catalytique.</p></li>
-<li><p>Essayer d’implémenter un algorithme catalytique pour le problème P-complet appelé GEN.</p></li>
-<li><p>Essayer de répondre à la question fondamentale :</p>
-<p><em>“Est-ce que le calcul catalytique est d’une quelconque aide pour faire mieux à l’aide de programmes de branchements sans restriction que nous ne savons le faire à l’aide de programmes de branchements incrémentaux pour GEN ? Si une amélioration ne semble pas possible, quels sont précisément les obstacles rencontrés ?”</em></p></li>
-</ul>
-</section>
-<section id="test" class="level1">
-<h1>Test:</h1>
-<p><a href="./slides.html">le lien vers la présentation</a></p>
-<p><a href="./treeEval.html">le lien vers l’implémentation</a></p>
-<section id="janvier---26-janvier" class="level2">
-<h2 data-anchor-id="janvier---26-janvier">13 Janvier - 26 Janvier</h2>
-<details>
-<summary>
-<strong>Tâches</strong>
-</summary>
-<ol type="i">
-<li>Lire les papiers [BCK+14] et [M23] (“Reuse Space” par Mertz).</li>
-</ol>
-</details>
-</section>
-<section id="january---9-février" class="level2">
-<h2 data-anchor-id="january---9-février">27 January - 9 Février</h2>
-<details>
-<summary>
-<strong>Tâches</strong>
-</summary>
-<ol type="i">
-<li>Relire [BCK+14] et faire les exercices de [M23].</li>
-<li>Lire [CM24]</li>
-<li>Faire le circuit Pour GEN.</li>
-</ol>
-</details>
-</section>
-<section id="février---23-février" class="level2">
-<h2 data-anchor-id="février---23-février">9 Février - 23 Février</h2>
-<details>
-<summary>
-<strong>Tâches</strong>
-</summary>
-<ol type="i">
-<li>Rédiger un document détaillé pour le circuit destiné à GEN, en démontrant aussi que le problème est P-complet (comme un exercice).</li>
-<li>Réaliser une rétro-ingénierie de TreeEval afin d’appliquer ses méthodes sur GEN.</li>
-<li>Lire Modern C par Jens Gustedt (3ème édition) pour refaire l’implémentation de TreeEval catalytique en C.</li>
-</ol>
-</details>
-</section>
-<section id="février---9-mars" class="level2">
-<h2 data-anchor-id="février---9-mars">23 Février - 9 Mars</h2>
-<details>
-<summary>
-<strong>Tâches</strong>
-</summary>
-<ol type="i">
-<li>Lire le papier d’Oded Goldreich, `` On the Cook-Mertz Tree Evaluation Procedure”.</li>
-<li>Revoir le plan et opter finalement pour une implémentation en C++ (sinon le code serait difficile à manipuler pour les corps algèbriques).</li>
-</ol>
-</details>
-</section>
-<section id="mars---23-mars" class="level2">
-<h2 data-anchor-id="mars---23-mars">10 Mars - 23 Mars</h2>
-<details>
-<summary>
-<strong>Tâches</strong>
-</summary>
-<ol type="i">
-<li>Étudier le papier d’Oded Goldreich, “Solving Tree Evaluation in <span class="math inline">\(\cal{o}(\log n \cdot log log n)\)</span> Space” (ce qui ne semble pas vraiment utile pour le projet après tout).</li>
-<li>essayer de rafiner l’implementation l’algo de TreeEval en python.</li>
-</ol>
-</details>
-</section>
-<section id="mars---6-avril" class="level2">
-<h2 data-anchor-id="mars---6-avril">24 Mars - 6 Avril</h2>
-<details>
-<summary>
-<strong>Tâches</strong>
-</summary>
-<ol type="i">
-<li>Faire une passe le papier “Simulating Time With Square-Root Space*” (à finir la semaine prochaine).</li>
-<li>Finaliser l’implémentation de l’algorithme TreeEval en C++ (qui est déjà terminée et fonctionne comme prévu).</li>
-<li>S’approcher d’une solution pour GEN, qui pourrait être pertinente (par contre, il me manque un petit détail qui peut être aussi un grand détail).</li>
-</ol>
-</details>
-</section>
-<section id="avril---20-avril" class="level2">
-<h2 data-anchor-id="avril---20-avril">7 Avril - 20 Avril</h2>
-<details>
-<summary>
-<strong>Tâches</strong>
-</summary>
-<strong>N/A.</strong>
-</details>
-</section>
-<section id="avril---4-mai" class="level2">
-<h2 data-anchor-id="avril---4-mai">21 Avril - 4 Mai</h2>
-<details>
-<summary>
-<strong>Tâches</strong>
-</summary>
-<strong>N/A.</strong>
-</details>
-
-
-</section>
-</section>
-</main></div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">Friday, the 4th of April, 2025</p>
     </div>
   </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="start-line-end-line" class="level3">
+<h3 class="anchored" data-anchor-id="start-line-end-line"><code>start-line</code> &amp; <code>end-line</code></h3>
+<p><span class="math display">\[e(y, \beta) = \prod_{i=1}^{\lceil \log k \rceil} (1 - y_i + (2y_i - 1)\beta_i)\]</span> <span class="math display">\[q_{u,i}(y, z)\]</span></p>
+<div data-add-from="/Users/ahmedmhedhbi/CLionProjects/treeEval/main.cpp" data-start-line="239" data-end-line="265">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1" data-startfrom="239"><pre class="sourceCode cpp code-with-copy"><code class="sourceCode cpp" style="counter-reset: source-line 238;"><span id="cb1-239"><a href="#cb1-239" aria-hidden="true" tabindex="-1"></a>FieldElement e_poly<span class="op">(</span><span class="at">const</span> vector<span class="op">&lt;</span>FieldElement<span class="op">&gt;&amp;</span> y<span class="op">,</span> <span class="at">const</span> vector<span class="op">&lt;</span>FieldElement<span class="op">&gt;&amp;</span> beta<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-240"><a href="#cb1-240" aria-hidden="true" tabindex="-1"></a>    FieldElement res<span class="op">(</span><span class="dv">1</span><span class="op">,</span> algo<span class="op">.</span>field<span class="op">);</span></span>
+<span id="cb1-241"><a href="#cb1-241" aria-hidden="true" tabindex="-1"></a>    FieldElement one<span class="op">(</span><span class="dv">1</span><span class="op">,</span> algo<span class="op">.</span>field<span class="op">);</span></span>
+<span id="cb1-242"><a href="#cb1-242" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">size_t</span> i <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> y<span class="op">.</span>size<span class="op">();</span> i<span class="op">++)</span> <span class="op">{</span></span>
+<span id="cb1-243"><a href="#cb1-243" aria-hidden="true" tabindex="-1"></a>        res <span class="op">=</span> res <span class="op">*</span> <span class="op">(</span>one <span class="op">+</span> y<span class="op">[</span>i<span class="op">]</span> <span class="op">+</span> beta<span class="op">[</span>i<span class="op">]);</span></span>
+<span id="cb1-244"><a href="#cb1-244" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-245"><a href="#cb1-245" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> res<span class="op">;</span></span>
+<span id="cb1-246"><a href="#cb1-246" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-247"><a href="#cb1-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-248"><a href="#cb1-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-249"><a href="#cb1-249" aria-hidden="true" tabindex="-1"></a>FieldElement q_u_i<span class="op">(</span><span class="at">const</span> vector<span class="op">&lt;</span>FieldElement<span class="op">&gt;&amp;</span> y<span class="op">,</span> <span class="at">const</span> vector<span class="op">&lt;</span>FieldElement<span class="op">&gt;&amp;</span> z<span class="op">,</span> <span class="dt">int</span> i<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-250"><a href="#cb1-250" aria-hidden="true" tabindex="-1"></a>    FieldElement res <span class="op">=</span> FieldElement<span class="op">(</span><span class="dv">1</span><span class="op">,</span> algo<span class="op">.</span>field<span class="op">);</span></span>
+<span id="cb1-251"><a href="#cb1-251" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> <span class="op">(</span><span class="dt">uint64_t</span> alpha <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> alpha <span class="op">&lt;</span> algo<span class="op">.</span>k<span class="op">;</span> <span class="op">++</span>alpha<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-252"><a href="#cb1-252" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="op">(((</span>alpha <span class="op">&gt;&gt;</span> i<span class="op">)</span> <span class="op">&amp;</span> <span class="dv">1</span><span class="bu">ULL</span><span class="op">)</span> <span class="op">!=</span> <span class="dv">1</span><span class="op">)</span></span>
+<span id="cb1-253"><a href="#cb1-253" aria-hidden="true" tabindex="-1"></a>            <span class="cf">continue</span><span class="op">;</span> <span class="co">// to accelerate the code</span></span>
+<span id="cb1-254"><a href="#cb1-254" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> <span class="op">(</span><span class="dt">uint64_t</span> beta <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> beta <span class="op">&lt;</span> algo<span class="op">.</span>k<span class="op">;</span> <span class="op">++</span>beta<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-255"><a href="#cb1-255" aria-hidden="true" tabindex="-1"></a>            <span class="cf">for</span> <span class="op">(</span><span class="dt">uint64_t</span> gamma <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> gamma <span class="op">&lt;</span> algo<span class="op">.</span>k<span class="op">;</span> <span class="op">++</span>gamma<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-256"><a href="#cb1-256" aria-hidden="true" tabindex="-1"></a>                <span class="cf">if</span> <span class="op">(</span>algo<span class="op">.</span>tree_functions<span class="op">[</span>algo<span class="op">.</span>u<span class="op">][</span>beta<span class="op">][</span>gamma<span class="op">].</span>value <span class="op">==</span> alpha<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb1-257"><a href="#cb1-257" aria-hidden="true" tabindex="-1"></a>                    vector<span class="op">&lt;</span>FieldElement<span class="op">&gt;</span> beta_bits <span class="op">=</span> get_bit_vector<span class="op">(</span>beta<span class="op">,</span> algo<span class="op">.</span>log_k<span class="op">);</span></span>
+<span id="cb1-258"><a href="#cb1-258" aria-hidden="true" tabindex="-1"></a>                    vector<span class="op">&lt;</span>FieldElement<span class="op">&gt;</span> gamma_bits <span class="op">=</span> get_bit_vector<span class="op">(</span>gamma<span class="op">,</span> algo<span class="op">.</span>log_k<span class="op">);</span></span>
+<span id="cb1-259"><a href="#cb1-259" aria-hidden="true" tabindex="-1"></a>                    res <span class="op">=</span> res <span class="op">+</span> <span class="op">(</span>e_poly<span class="op">(</span>y<span class="op">,</span> beta_bits<span class="op">)</span> <span class="op">*</span> e_poly<span class="op">(</span>z<span class="op">,</span> gamma_bits<span class="op">));</span></span>
+<span id="cb1-260"><a href="#cb1-260" aria-hidden="true" tabindex="-1"></a>                <span class="op">}</span></span>
+<span id="cb1-261"><a href="#cb1-261" aria-hidden="true" tabindex="-1"></a>            <span class="op">}</span></span>
+<span id="cb1-262"><a href="#cb1-262" aria-hidden="true" tabindex="-1"></a>        <span class="op">}</span></span>
+<span id="cb1-263"><a href="#cb1-263" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
+<span id="cb1-264"><a href="#cb1-264" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> res<span class="op">;</span></span>
+<span id="cb1-265"><a href="#cb1-265" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
- <!-- /main -->
+
+
+<!-- -->
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -421,6 +386,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
@@ -481,6 +453,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       container: window.document.getElementById('quarto-embedded-source-code-modal')
     });
     clipboardModal.on('success', onCopySuccess);
+  }
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
@@ -810,7 +833,38 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Tree Evaluation is in Space O(log n  log log n) implementation"</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> Ahmed Mhedhbi</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> last-modified</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">navbar:</span><span class="co"> false</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">  html: </span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="an">engine:</span><span class="co"> knitr</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">  - add-code-files</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="fu">### `start-line` &amp; `end-line`</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>$$e(y, \beta) = \prod_{i=1}^{\lceil \log k \rceil} (1 - y_i + (2y_i - 1)\beta_i)$$</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>$$q_{u,i}(y, z)$$</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>::: {add-from=/Users/ahmedmhedhbi/CLionProjects/treeEval/main.cpp start-line=239 end-line=265}</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{.cpp}</span></span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -819,7 +873,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
 <p>© 2025 <a href="https://ahmedmhedhbii.github.io/">Ahmed Mhedhbi</a>.</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/ahmedmhedhbii/ahmedmhedhbii.github.io/edit/main/projetHonor.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ahmedmhedhbii/ahmedmhedhbii.github.io/blob/main/projetHonor.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/ahmedmhedhbii/ahmedmhedhbii.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions"><ul><li><a href="https://github.com/ahmedmhedhbii/ahmedmhedhbii.github.io/edit/main/treeEval.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/ahmedmhedhbii/ahmedmhedhbii.github.io/blob/main/treeEval.qmd" class="toc-action"><i class="bi empty"></i>View source</a></li><li><a href="https://github.com/ahmedmhedhbii/ahmedmhedhbii.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

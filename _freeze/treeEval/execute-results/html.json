@@ -1,0 +1,15 @@
+{
+  "hash": "6812d7e59b8c62931f39e53136044418",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tree Evaluation is in Space O(log n  log log n) implementation\"\nauthor: Ahmed Mhedhbi\ndate: last-modified\nnavbar: false\nformat:\n  html: \n    code-fold: true\n    code-tools: true\nengine: knitr\nfilters:\n  - add-code-files\n\n    \n\n---\n\n\n\n\n\n\n### `start-line` & `end-line`\n$$e(y, \\beta) = \\prod_{i=1}^{\\lceil \\log k \\rceil} (1 - y_i + (2y_i - 1)\\beta_i)$$\n$$q_{u,i}(y, z)$$\n\n::: {add-from=/Users/ahmedmhedhbi/CLionProjects/treeEval/main.cpp start-line=239 end-line=265}\n\n```{.cpp}\n```\n\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -7,6 +7,13 @@
     "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nThursday, the 9th of January, 2025\n\n\nAhmed Mhedhbi\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nMonday, the 6th of January, 2025\n\n\nAhmed Mhedhbi\n\n\n\n\n\n\nNo matching items"
   },
   {
+    "objectID": "slides.html#merci",
+    "href": "slides.html#merci",
+    "title": "Le chemin pour battre les programmes de branchement pour GEN",
+    "section": "Merci !",
+    "text": "Merci !"
+  },
+  {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Welcome To My Blog",
@@ -19,6 +26,13 @@
     "title": "Post With Code",
     "section": "",
     "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "treeEval.html",
+    "href": "treeEval.html",
+    "title": "Tree Evaluation is in Space O(log n log log n) implementation",
+    "section": "",
+    "text": "start-line & end-line\n\\[e(y, \\beta) = \\prod_{i=1}^{\\lceil \\log k \\rceil} (1 - y_i + (2y_i - 1)\\beta_i)\\] \\[q_{u,i}(y, z)\\]\n\n\nCode\nFieldElement e_poly(const vector&lt;FieldElement&gt;& y, const vector&lt;FieldElement&gt;& beta) {\n    FieldElement res(1, algo.field);\n    FieldElement one(1, algo.field);\n    for (size_t i = 0; i &lt; y.size(); i++) {\n        res = res * (one + y[i] + beta[i]);\n    }\n    return res;\n}\n\n\nFieldElement q_u_i(const vector&lt;FieldElement&gt;& y, const vector&lt;FieldElement&gt;& z, int i) {\n    FieldElement res = FieldElement(1, algo.field);\n    for (uint64_t alpha = 0; alpha &lt; algo.k; ++alpha) {\n        if (((alpha &gt;&gt; i) & 1ULL) != 1)\n            continue; // to accelerate the code\n        for (uint64_t beta = 0; beta &lt; algo.k; ++beta) {\n            for (uint64_t gamma = 0; gamma &lt; algo.k; ++gamma) {\n                if (algo.tree_functions[algo.u][beta][gamma].value == alpha) {\n                    vector&lt;FieldElement&gt; beta_bits = get_bit_vector(beta, algo.log_k);\n                    vector&lt;FieldElement&gt; gamma_bits = get_bit_vector(gamma, algo.log_k);\n                    res = res + (e_poly(y, beta_bits) * e_poly(z, gamma_bits));\n                }\n            }\n        }\n    }\n    return res;\n}"
   },
   {
     "objectID": "index.html",
@@ -53,28 +67,28 @@
     "href": "projetHonor.html#février---23-février",
     "title": "Projet Honor",
     "section": "9 Février - 23 Février",
-    "text": "9 Février - 23 Février\n\n\nTâches\n\n\nRédiger un document détaillé pour le circuit destiné à GEN, en démontrant aussi que le problème est P-complet (comme un exercice).\n\nRéaliser une rétro-ingénierie de TreeEval afin d’appliquer ses méthodes sur GEN.\n\nLire Modern C par Jens Gustedt (3ème édition) pour refaire l’implémentation de TreeEval catalytique en C."
+    "text": "9 Février - 23 Février\n\n\nTâches\n\n\nRédiger un document détaillé pour le circuit destiné à GEN, en démontrant aussi que le problème est P-complet (comme un exercice).\nRéaliser une rétro-ingénierie de TreeEval afin d’appliquer ses méthodes sur GEN.\nLire Modern C par Jens Gustedt (3ème édition) pour refaire l’implémentation de TreeEval catalytique en C."
   },
   {
     "objectID": "projetHonor.html#février---9-mars",
     "href": "projetHonor.html#février---9-mars",
     "title": "Projet Honor",
     "section": "23 Février - 9 Mars",
-    "text": "23 Février - 9 Mars\n\n\nTâches\n\nN/A."
+    "text": "23 Février - 9 Mars\n\n\nTâches\n\n\nLire le papier d’Oded Goldreich, `` On the Cook-Mertz Tree Evaluation Procedure”.\nRevoir le plan et opter finalement pour une implémentation en C++ (sinon le code serait difficile à manipuler pour les corps algèbriques)."
   },
   {
     "objectID": "projetHonor.html#mars---23-mars",
     "href": "projetHonor.html#mars---23-mars",
     "title": "Projet Honor",
     "section": "10 Mars - 23 Mars",
-    "text": "10 Mars - 23 Mars\n\n\nTâches\n\nN/A."
+    "text": "10 Mars - 23 Mars\n\n\nTâches\n\n\nÉtudier le papier d’Oded Goldreich, “Solving Tree Evaluation in \\(\\cal{o}(\\log n \\cdot log log n)\\) Space” (ce qui ne semble pas vraiment utile pour le projet après tout).\nessayer de rafiner l’implementation l’algo de TreeEval en python."
   },
   {
     "objectID": "projetHonor.html#mars---6-avril",
     "href": "projetHonor.html#mars---6-avril",
     "title": "Projet Honor",
     "section": "24 Mars - 6 Avril",
-    "text": "24 Mars - 6 Avril\n\n\nTâches\n\nN/A."
+    "text": "24 Mars - 6 Avril\n\n\nTâches\n\n\nFaire une passe le papier “Simulating Time With Square-Root Space*” (à finir la semaine prochaine).\nFinaliser l’implémentation de l’algorithme TreeEval en C++ (qui est déjà terminée et fonctionne comme prévu).\nS’approcher d’une solution pour GEN, qui pourrait être pertinente (par contre, il me manque un petit détail qui peut être aussi un grand détail)."
   },
   {
     "objectID": "projetHonor.html#avril---20-avril",

@@ -21,8 +21,14 @@ Voici la [description du projet](assests/files/HonorA2025.pdf).
 - Finaliser et documenter l'implémentation de TreeEval catalytique.
 - Essayer d'implémenter un algorithme catalytique pour le problème P-complet appelé GEN.
 - Essayer de répondre à la question fondamentale :
-  
+
   _"Est-ce que le calcul catalytique est d’une quelconque aide pour faire mieux à l’aide de programmes de branchements sans restriction que nous ne savons le faire à l’aide de programmes de branchements incrémentaux pour GEN ? Si une amélioration ne semble pas possible, quels sont précisément les obstacles rencontrés ?"_
+
+# Test:
+[le lien vers la présentation](slides.qmd)
+
+[le lien vers l'implémentation](treeEval.qmd)
+
 
 
 ## 13 Janvier - 26 Janvier
@@ -48,8 +54,8 @@ iii. Faire le circuit Pour GEN.
 <details>
 <summary><strong>Tâches</strong></summary>
 
-i. Rédiger un document détaillé pour le circuit destiné à GEN, en démontrant aussi que le problème est P-complet (comme un exercice).  
-ii. Réaliser une rétro-ingénierie de TreeEval afin d'appliquer ses méthodes sur GEN.  
+i. Rédiger un document détaillé pour le circuit destiné à GEN, en démontrant aussi que le problème est P-complet (comme un exercice).
+ii. Réaliser une rétro-ingénierie de TreeEval afin d'appliquer ses méthodes sur GEN.
 iii. Lire Modern C par Jens Gustedt (3ème édition) pour refaire l'implémentation de TreeEval catalytique en C.
 
 </details>
@@ -58,19 +64,24 @@ iii. Lire Modern C par Jens Gustedt (3ème édition) pour refaire l'implémentat
 ## 23 Février - 9 Mars
 <details>
 <summary><strong>Tâches</strong></summary>
-**N/A.**
+i. Lire le papier d'Oded Goldreich, `` On the Cook-Mertz Tree Evaluation Procedure".
+ii. Revoir le plan et opter finalement pour une implémentation en C++ (sinon le code serait difficile à manipuler pour les corps algèbriques).
+
 </details>
 
 ## 10 Mars - 23 Mars
 <details>
 <summary><strong>Tâches</strong></summary>
-**N/A.**
+i. Étudier le papier d'Oded Goldreich, "Solving Tree Evaluation in $\cal{o}(\log n \cdot log log n)$ Space" (ce qui ne semble pas vraiment utile pour le projet après tout).
+ii. essayer de rafiner l'implementation l'algo de TreeEval en python.
 </details>
 
 ## 24 Mars - 6 Avril
 <details>
 <summary><strong>Tâches</strong></summary>
-**N/A.**
+i. Faire une passe le papier "Simulating Time With Square-Root Space*" (à finir la semaine prochaine).
+ii. Finaliser l'implémentation de l'algorithme TreeEval en C++ (qui est déjà terminée et fonctionne comme prévu).
+iii. S'approcher d'une solution pour GEN, qui pourrait être pertinente (par contre, il me manque un petit détail qui peut être aussi un grand détail).
 </details>
 
 ## 7 Avril - 20 Avril
