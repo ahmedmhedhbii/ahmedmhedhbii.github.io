@@ -30,7 +30,7 @@ Voici la [description du projet](assests/files/HonorA2025.pdf).
 
 [le lien vers l'implémentation en C++](TreeEvalCpp.qmd)
 
-[le lien vers le rapport](assests/files/projet_Honor_rapport_.pdf).
+[le lien vers le rapport](assests/files/projet_Honor_rapport.pdf)
 
 
 
