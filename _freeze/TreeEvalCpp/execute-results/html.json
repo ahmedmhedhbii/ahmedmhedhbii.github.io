@@ -1,0 +1,15 @@
+{
+  "hash": "16dc813bf592f67910a151004f64adf2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tree Evaluation is in Space O(log n  log log n) implementation\"\nauthor: Ahmed Mhedhbi\ndate: last-modified\nnavbar: false\nformat:\n  html: \n    code-fold: true\n    code-tools: true\n    code-line-numbers: true \nengine: knitr\nfilters:\n  - add-code-files\n---\n\n\n\n\n### TreeEval in CPP\n\n::: {add-from=/Users/ahmedmhedhbi/CLionProjects/treeEval/main.cpp number-lines=true}\n\n```{.cpp}\n```\n\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

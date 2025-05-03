@@ -1,0 +1,15 @@
+{
+  "hash": "6beb6def5fde6be2e13769ae6f4210d4",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Tree Evaluation is in Space O(log n  log log n) implementation\"\nauthor: Ahmed Mhedhbi\ndate: last-modified\nnavbar: false\nformat:\n  html: \n    code-fold: true\n    code-tools: true\nengine: knitr\nfilters:\n  - add-code-files\n\n    \n\n---\n\n\n\n### TreeEval in Python\n\n::: {add-from=/Users/ahmedmhedhbi/Documents/H25/projet_honneur/catalytic-tree-evaluation/main.py number-lines=true}\n\n```{.py}\n```\n\n:::",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

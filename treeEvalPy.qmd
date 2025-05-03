@@ -1,0 +1,27 @@
+---
+title: "Tree Evaluation is in Space O(log n  log log n) implementation"
+author: Ahmed Mhedhbi
+date: last-modified
+navbar: false
+format:
+  html: 
+    code-fold: true
+    code-tools: true
+    code-line-numbers: true 
+
+engine: knitr
+filters:
+  - add-code-files
+
+    
+
+---
+
+### TreeEval in Python
+
+::: {add-from=/Users/ahmedmhedhbi/Documents/H25/projet_honneur/catalytic-tree-evaluation/main.py}
+
+```{.py}
+```
+
+:::

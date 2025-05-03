@@ -24,10 +24,13 @@ Voici la [description du projet](assests/files/HonorA2025.pdf).
 
   _"Est-ce que le calcul catalytique est d’une quelconque aide pour faire mieux à l’aide de programmes de branchements sans restriction que nous ne savons le faire à l’aide de programmes de branchements incrémentaux pour GEN ? Si une amélioration ne semble pas possible, quels sont précisément les obstacles rencontrés ?"_
 
-# Test:
-[le lien vers la présentation](slides.qmd)
+[le lien vers la présentation](assests/files/projet_honor_presentation_.pdf)
 
-[le lien vers l'implémentation](treeEval.qmd)
+[le lien vers l'implémentation en Python](treeEvalPy.qmd)
+
+[le lien vers l'implémentation en C++](TreeEvalCpp.qmd)
+
+[le lien vers le rapport](assests/files/projet_Honor_rapport.pdf)
 
 
 
@@ -87,11 +90,11 @@ iii. S'approcher d'une solution pour GEN, qui pourrait être pertinente (par con
 ## 7 Avril - 20 Avril
 <details>
 <summary><strong>Tâches</strong></summary>
-**N/A.**
+- Raffiner l’implémentation de l’algorithme TreeEval en C++.
 </details>
 
-## 21 Avril - 4 Mai
+## 21 Avril - 2 Mai
 <details>
 <summary><strong>Tâches</strong></summary>
-**N/A.**
+- Finaliser la rédaction du rapport.
 </details>
