@@ -1,19 +1,24 @@
 ---
 import type { GetStaticPaths } from "astro";
 import { getCollection } from "astro:content";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import IconRss from "@/assets/icons/IconRss.svg";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Breadcrumb from "@/components/Breadcrumb.astro";
 import Main from "@/components/Main.astro";
 import Card from "@/components/Card.astro";
+import Tag from "@/components/Tag.astro";
 import Footer from "@/components/Footer.astro";
 import Pagination from "@/components/Pagination.astro";
 import { getSortedPosts } from "@/utils/getSortedPosts";
+import { getUniqueTags } from "@/utils/getUniqueTags";
+import { postFilter } from "@/utils/postFilter";
 import { useTranslations } from "@/i18n";
 import config from "@/config";
 
 export const getStaticPaths = (async ({ paginate }) => {
-  const posts = await getCollection("posts", ({ data }) => !data.draft);
+  const posts = await getCollection("posts");
   return paginate(getSortedPosts(posts), { pageSize: config.posts.perPage });
 }) satisfies GetStaticPaths;
 
@@ -21,6 +26,10 @@ const { page } = Astro.props;
 
 const locale = Astro.currentLocale ?? config.site.lang;
 const t = useTranslations(locale);
+
+// Tag list shown at the top of the blog (replaces the Tags nav link)
+const allPosts = (await getCollection("posts")).filter(postFilter);
+const tags = getUniqueTags(allPosts);
 ---
 
 <Layout title={`${t.pages.postsTitle} | ${config.site.title}`}>
@@ -29,6 +38,20 @@ const t = useTranslations(locale);
   <Breadcrumb />
 
   <Main pageTitle={t.pages.postsTitle} pageDesc={t.pages.postsDesc}>
+    <ul class="mb-8 flex flex-wrap items-center gap-x-4 gap-y-2">
+      <li>
+        <a
+          href={getRelativeLocaleUrl(locale, "rss.xml")}
+          target="_blank"
+          class="hover:text-accent flex items-center gap-1 text-sm"
+          title="RSS feed"
+        >
+          <IconRss class="stroke-accent size-4" />
+          RSS
+        </a>
+      </li>
+      {tags.map(({ tag, tagName }) => <Tag {tag} {tagName} size="sm" />)}
+    </ul>
     <ul>
       {page.data.map(data => <Card {...data} />)}
     </ul>
