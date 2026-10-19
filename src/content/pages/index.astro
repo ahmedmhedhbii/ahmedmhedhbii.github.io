@@ -1,0 +1,105 @@
+---
+import { getEntry, render } from "astro:content";
+import { Image } from "astro:assets";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Socials from "@/components/Socials.astro";
+import config from "@/config";
+
+const home = await getEntry("pages", "home");
+
+if (!home) {
+  throw new Error("Missing content entry: `home.md` in `src/content/pages/`");
+}
+
+const { Content } = await render(home);
+const {
+  title,
+  tagline,
+  description,
+  photo,
+  photoAlt,
+  interests = [],
+  news = [],
+} = home.data;
+---
+
+<Layout description={description}>
+  <Header />
+  <main id="main-content" class="app-layout pb-8">
+    <!-- Intro: photo, name, tagline, links, bio -->
+    <section id="intro" class="pt-10 pb-8">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+        {
+          photo && (
+            <Image
+              src={photo}
+              alt={photoAlt ?? title}
+              width={320}
+              loading="eager"
+              class="size-36 shrink-0 rounded-2xl object-cover sm:size-40"
+            />
+          )
+        }
+        <div>
+          <h1 class="text-3xl font-bold sm:text-4xl">{title}</h1>
+          {tagline && <p class="text-muted-foreground mt-2">{tagline}</p>}
+          {
+            config.socials.length > 0 && (
+              <div class="-ms-2 mt-3">
+                <Socials />
+              </div>
+            )
+          }
+        </div>
+      </div>
+      <div class="app-prose mt-8">
+        <Content />
+      </div>
+    </section>
+
+    {
+      interests.length > 0 && (
+        <section id="interests" class="border-border border-t py-8">
+          <h2 class="text-xl font-semibold tracking-wide">Research interests</h2>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {interests.map(interest => (
+              <li class="bg-muted rounded-full px-3 py-1 text-sm">
+                {interest}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    {
+      news.length > 0 && (
+        <section id="news" class="border-border border-t py-8">
+          <h2 class="text-xl font-semibold tracking-wide">News</h2>
+          <ul class="mt-4 space-y-3">
+            {news.map(({ date, text, link }) => (
+              <li class="flex gap-4">
+                <span class="w-20 shrink-0 tabular-nums opacity-70">{date}</span>
+                <span>
+                  {link ? (
+                    <a
+                      href={link}
+                      class="hover:text-accent underline decoration-dashed underline-offset-4"
+                    >
+                      {text}
+                    </a>
+                  ) : (
+                    text
+                  )}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+  </main>
+  <Footer />
+</Layout>
