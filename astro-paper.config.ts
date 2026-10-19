@@ -2,14 +2,13 @@ import { defineAstroPaperConfig } from "./src/types/config";
 
 export default defineAstroPaperConfig({
   site: {
-    url: "https://astro-paper.pages.dev/",
-    title: "AstroPaper",
-    description: "A minimal, responsive and SEO-friendly Astro blog theme.",
-    author: "Sat Naing",
-    profile: "https://satna.ing",
-    ogImage: "default-og.jpg",
+    url: "https://ahmedmhedhbii.github.io/",
+    title: "Ahmed Mhedhbi",
+    description: "Research on proof complexity and communication complexity at Université de Montréal.",
+    author: "Ahmed Mhedhbi",
+    profile: "https://ahmedmhedhbii.github.io/",
+    timezone: "America/Toronto",
     lang: "en",
-    timezone: "Asia/Bangkok",
     dir: "ltr",
   },
   posts: {
@@ -29,10 +28,10 @@ export default defineAstroPaperConfig({
     search: "pagefind",
   },
   socials: [
-    { name: "github",   url: "https://github.com/satnaing/astro-paper" },
-    { name: "x",        url: "https://x.com/username" },
-    { name: "linkedin", url: "https://www.linkedin.com/in/username/" },
-    { name: "mail",     url: "mailto:yourmail@gmail.com" },
+    { name: "github",   url: "https://github.com/ahmedmhedhbii" },
+    { name: "x",        url: "https://x.com/ahmed_mhedhbii" },
+    { name: "linkedin", url: "https://www.linkedin.com/in/ahmed-mhedhbi/" },
+    { name: "mail",     url: "mailto:ahmed.a.mhedhbi@gmail.com" },
   ],
   shareLinks: [
     { name: "whatsapp", url: "https://wa.me/?text=" },
