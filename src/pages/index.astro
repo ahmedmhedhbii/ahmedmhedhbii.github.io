@@ -1,100 +1,73 @@
 ---
-import { getCollection } from "astro:content";
-import { getRelativeLocaleUrl } from "astro:i18n";
-import IconRss from "@/assets/icons/IconRss.svg";
-import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
+import { getEntry, render } from "astro:content";
+import { Image } from "astro:assets";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
-import Card from "@/components/Card.astro";
-import LinkButton from "@/components/LinkButton.astro";
-import { getSortedPosts } from "@/utils/getSortedPosts";
-import { useTranslations } from "@/i18n";
 import config from "@/config";
 
-const { socials, posts: postsConfig } = config;
+const home = await getEntry("pages", "home");
 
-const locale = Astro.currentLocale ?? config.site.lang;
-const t = useTranslations(locale);
+if (!home) {
+  throw new Error("Missing content entry: `home.md` in `src/content/pages/`");
+}
 
-const posts = await getCollection("posts");
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
-const homePath = getRelativeLocaleUrl(locale, "");
+const { Content } = await render(home);
+const {
+  title,
+  tagline,
+  description,
+  photo,
+  photoAlt,
+  interests = [],
+  news = [],
+} = home.data;
 ---
 
-<Layout>
+<Layout description={description}>
   <Header />
-  <main
-    id="main-content"
-    data-layout="index"
-    data-home-path={homePath}
-    class="app-layout my-1"
-  >
-    <section id="hero" class="border-border border-b pt-8 pb-6">
-      <h1 class="my-4 inline-block text-4xl font-bold sm:my-8 sm:text-5xl">
-        Mingalaba
-      </h1>
-      <a
-        target="_blank"
-        href={`${import.meta.env.BASE_URL.replace(/\/?$/, "/")}rss.xml`}
-        class="inline-block"
-        aria-label="RSS Feed"
-        title="RSS Feed"
-      >
-        <IconRss
-          width={20}
-          height={20}
-          class="stroke-accent scale-125 stroke-3 rtl:-rotate-90"
-        />
-        <span class="sr-only">RSS Feed</span>
-      </a>
-
-      <p>
-        AstroPaper is a minimal, responsive, accessible and SEO-friendly Astro
-        blog theme. This theme follows best practices and provides accessibility
-        out of the box. Light and dark mode are supported by default. Moreover,
-        additional color schemes can also be configured.
-      </p>
-      <p class="mt-2">
-        Read the blog posts or check{" "}
-        <LinkButton
-          class="hover:text-accent underline decoration-dashed underline-offset-4"
-          href="https://github.com/satnaing/astro-paper#readme"
-        >
-          README
-        </LinkButton>{" "}
-        for more info.
-      </p>
-      {
-        socials.length > 0 && (
-          <div class="mt-4 flex max-sm:flex-col sm:items-center">
-            <div class="me-2 mb-1 whitespace-nowrap sm:mb-0">
-              {t.home.socialLinks}:
-            </div>
-            <Socials />
-          </div>
-        )
-      }
+  <main id="main-content" class="app-layout pb-8">
+    <!-- Intro: photo, name, tagline, links, bio -->
+    <section id="intro" class="pt-10 pb-8">
+      <div class="flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-8">
+        {
+          photo && (
+            <Image
+              src={photo}
+              alt={photoAlt ?? title}
+              width={320}
+              loading="eager"
+              class="size-36 shrink-0 rounded-2xl object-cover sm:size-40"
+            />
+          )
+        }
+        <div>
+          <h1 class="text-3xl font-bold sm:text-4xl">{title}</h1>
+          {tagline && <p class="text-muted-foreground mt-2">{tagline}</p>}
+          {
+            config.socials.length > 0 && (
+              <div class="-ms-2 mt-3">
+                <Socials />
+              </div>
+            )
+          }
+        </div>
+      </div>
+      <div class="app-prose mt-8">
+        <Content />
+      </div>
     </section>
 
     {
-      featuredPosts.length > 0 && (
-        <section
-          id="featured"
-          class:list={[
-            "pt-12 pb-6",
-            { "border-border border-b": recentPosts.length > 0 },
-          ]}
-        >
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.featured}
-          </h2>
-          <ul>
-            {featuredPosts.map(data => (
-              <Card variant="h3" {...data} />
+      interests.length > 0 && (
+        <section id="interests" class="border-border border-t py-8">
+          <h2 class="text-xl font-semibold tracking-wide">Research interests</h2>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {interests.map(interest => (
+              <li class="bg-muted rounded-full px-3 py-1 text-sm">
+                {interest}
+              </li>
             ))}
           </ul>
         </section>
@@ -102,37 +75,31 @@ const homePath = getRelativeLocaleUrl(locale, "");
     }
 
     {
-      recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">
-            {t.home.recentPosts}
-          </h2>
-          <ul>
-            {recentPosts.slice(0, postsConfig.perIndex).map(data => (
-              <Card variant="h3" {...data} />
+      news.length > 0 && (
+        <section id="news" class="border-border border-t py-8">
+          <h2 class="text-xl font-semibold tracking-wide">News</h2>
+          <ul class="mt-4 space-y-3">
+            {news.map(({ date, text, link }) => (
+              <li class="flex gap-4">
+                <span class="w-20 shrink-0 tabular-nums opacity-70">{date}</span>
+                <span>
+                  {link ? (
+                    <a
+                      href={link}
+                      class="hover:text-accent underline decoration-dashed underline-offset-4"
+                    >
+                      {text}
+                    </a>
+                  ) : (
+                    text
+                  )}
+                </span>
+              </li>
             ))}
           </ul>
         </section>
       )
     }
-
-    <div class="my-8 text-center">
-      <LinkButton href={getRelativeLocaleUrl(locale, "posts")}>
-        {t.home.allPosts}
-        <IconArrowRight class="inline-block rtl:-rotate-180" />
-      </LinkButton>
-    </div>
   </main>
   <Footer />
 </Layout>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
-    const indexLayout = (document.querySelector("#main-content") as HTMLElement)
-      ?.dataset;
-    const baseRoot = import.meta.env.BASE_URL.replace(/\/?$/, "/");
-    if (indexLayout?.layout) {
-      sessionStorage.setItem("backUrl", indexLayout.homePath ?? baseRoot);
-    }
-  });
-</script>
